@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4612485b48ddd754cafc5c2260fa7351, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  levelNumber: 2
+  moneyReward: 100
+  enemyHealth: 4
+  enemyFirePower: 1
+  enemyShootSpeed: 4
+  totalEnemyCount: 9
+  totalHumanEnemyCount: 9
+  totalAircraftCount: 0
+  totalCivilianCount: 12
+  spawnIntervalStart: 2.5
+  spawnIntervalEnd: 1
+  enemyMoveSpeedStart: 5
+  enemyMoveSpeedEnd: 8
+  wavesData:
+  - pointsData:
+    - spawnPointIndex: 1
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    - spawnPointIndex: 6
+      LevelObjectToSpawn: {fileID: 11400000, guid: 99327fff19792b1409eb3dbbf994d087,
+        type: 2}
+    interval: 2.5
+    enemyMoveSpeed: 5
+  - pointsData:
+    - spawnPointIndex: 3
+      LevelObjectToSpawn: {fileID: 11400000, guid: 1c36405faaeb86840b0da614f92e16e6,
+        type: 2}
+    - spawnPointIndex: 8
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 2.3333333
+    enemyMoveSpeed: 5.3333335
+  - pointsData:
+    - spawnPointIndex: 0
+      LevelObjectToSpawn: {fileID: 11400000, guid: 99327fff19792b1409eb3dbbf994d087,
+        type: 2}
+    - spawnPointIndex: 6
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 2.1666667
+    enemyMoveSpeed: 5.6666665
+  - pointsData:
+    - spawnPointIndex: 4
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    - spawnPointIndex: 7
+      LevelObjectToSpawn: {fileID: 11400000, guid: 869750d6bebc66f458de70fda9f35010,
+        type: 2}
+    interval: 2
+    enemyMoveSpeed: 6
+  - pointsData:
+    - spawnPointIndex: 0
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    - spawnPointIndex: 6
+      LevelObjectToSpawn: {fileID: 11400000, guid: 0ede456cba9c8d946a94f5b4f93e7956,
+        type: 2}
+    interval: 1.8333333
+    enemyMoveSpeed: 6.3333335
+  - pointsData:
+    - spawnPointIndex: 3
+      LevelObjectToSpawn: {fileID: 11400000, guid: 99327fff19792b1409eb3dbbf994d087,
+        type: 2}
+    - spawnPointIndex: 5
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 1.6666666
+    enemyMoveSpeed: 6.6666665
+  - pointsData:
+    - spawnPointIndex: 0
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    - spawnPointIndex: 2
+      LevelObjectToSpawn: {fileID: 11400000, guid: 1c36405faaeb86840b0da614f92e16e6,
+        type: 2}
+    - spawnPointIndex: 8
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 1.5
+    enemyMoveSpeed: 7
+  - pointsData:
+    - spawnPointIndex: 4
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 1.3333333
+    enemyMoveSpeed: 7.3333335
+  - pointsData:
+    - spawnPointIndex: 0
+      LevelObjectToSpawn: {fileID: 11400000, guid: 99327fff19792b1409eb3dbbf994d087,
+        type: 2}
+    - spawnPointIndex: 2
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 1.1666666
+    enemyMoveSpeed: 7.666667
+  - pointsData:
+    - spawnPointIndex: 0
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    - spawnPointIndex: 4
+      LevelObjectToSpawn: {fileID: 11400000, guid: 869750d6bebc66f458de70fda9f35010,
+        type: 2}
+    - spawnPointIndex: 8
+      LevelObjectToSpawn: {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684,
+        type: 2}
+    interval: 0.99999994
+    enemyMoveSpeed: 8
+  differentObjects:
+  - {fileID: 11400000, guid: 49f17e6500fa540438bb571078a15684, type: 2}
+  - {fileID: 11400000, guid: 99327fff19792b1409eb3dbbf994d087, type: 2}
+  - {fileID: 11400000, guid: 1c36405faaeb86840b0da614f92e16e6, type: 2}
+  - {fileID: 11400000, guid: 869750d6bebc66f458de70fda9f35010, type: 2}
+  - {fileID: 11400000, guid: 0ede456cba9c8d946a94f5b4f93e7956, type: 2}
