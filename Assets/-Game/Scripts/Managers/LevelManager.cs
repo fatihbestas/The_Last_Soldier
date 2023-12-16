@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
 #if UNITY_EDITOR
     [SerializeField] private LevelData testLevel;
+    [SerializeField] private bool playOnlyThisLevel;
 #endif    
     [SerializeField] private LevelData[] levelsData;
     [SerializeField] private Transform TargetableAgentPoolsParent;
@@ -60,7 +61,9 @@ public class LevelManager : MonoBehaviour
 
     private void OnLevelEnd(bool isLevelPassed)
     {
-        
+#if UNITY_EDITOR
+        if (testLevel != null && playOnlyThisLevel) return;
+#endif
         if (!isLevelPassed)
             return;
 
