@@ -6,7 +6,7 @@ public class TargetableAgentSpawner : MonoBehaviour
     [SerializeField] private TargetableAgentPath[] paths = new TargetableAgentPath[9];
 
     private TargetableAgentPath path;
-    private GameObject tempObject;
+    private TargetableAgent tempAgent;
 
     private WaveData[] wavesData;
     private int wavesArraySize;
@@ -45,14 +45,14 @@ public class TargetableAgentSpawner : MonoBehaviour
         for (int i = 0; i < wavesArraySize; i++)
         {
             pointsArraySize = wavesData[i].pointsData.Length;
-            for (int j = 0; j < pointsArraySize; j++) 
+            for (int j = 0; j < pointsArraySize; j++)
             {
-                tempObject = wavesData[i].pointsData[j].LevelObjectToSpawn.pool.GetPooledObject();
-                tempObject.SetActive(true);
+                tempAgent = wavesData[i].pointsData[j].LevelObjectToSpawn.pool.GetPooledComponent();
+                tempAgent.gameObject.SetActive(true);
                 path = paths[wavesData[i].pointsData[j].spawnPointIndex];
-                tempObject.transform.position = path.spawnPoint;
-                AllTargetableAgents.TargetableAgentGameObjectBond[tempObject].Initialize(path.targetPoint, wavesData[i].enemyMoveSpeed);
-                
+                tempAgent.transform.position = path.spawnPoint;
+                tempAgent.Initialize(path.targetPoint, wavesData[i].enemyMoveSpeed);
+
             }
             yield return new WaitForSeconds(wavesData[i].interval);
         }

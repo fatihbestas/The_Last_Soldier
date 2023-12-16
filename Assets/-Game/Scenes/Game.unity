@@ -292,6 +292,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3604644388532796701}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &112077870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112077872}
+  - component: {fileID: 112077871}
+  m_Layer: 0
+  m_Name: BloodVfxPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &112077871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48acc187bff94c742b3cf6d47618b9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodVfxPool: {fileID: 1354486537}
+--- !u!4 &112077872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112077870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276289201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testLevel: {fileID: 0}
+  playOnlyThisLevel: 0
   levelsData:
   - {fileID: 11400000, guid: e24b70b2b0877434baa1a206edef45fd, type: 2}
   - {fileID: 11400000, guid: cb2ad58de8f3c6646b521c0a457193e3, type: 2}
@@ -2657,7 +2703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2955342692915694574}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13159902, y: 0.000000008528368, z: -0.0000000011321715, w: 0.991303}
+  m_LocalRotation: {x: 0.13159904, y: -0.000000008528367, z: 0.0000000011321714, w: 0.991303}
   m_LocalPosition: {x: 0, y: 10, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3177,7 +3223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8524430878400026004}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13159902, y: 0.000000008528368, z: -0.0000000011321715, w: 0.991303}
+  m_LocalRotation: {x: 0.13159904, y: -0.000000008528367, z: 0.0000000011321714, w: 0.991303}
   m_LocalPosition: {x: 0, y: 10, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4289,4 +4335,5 @@ SceneRoots:
   - {fileID: 1805454557}
   - {fileID: 2052564996}
   - {fileID: 616371400}
+  - {fileID: 112077872}
   - {fileID: 1330397958}

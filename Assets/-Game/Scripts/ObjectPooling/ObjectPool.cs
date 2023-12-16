@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ObjectPool : MonoBehaviour
+public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 {
     public int poolSize;
     public GameObject objectToPool;
@@ -9,13 +9,13 @@ public abstract class ObjectPool : MonoBehaviour
     [Tooltip("Check this option if the creation of the pool will not trigger from somewhere else.")]
     public bool createPoolOnAwake;
 
-    private List<GameObject> pool;
+    private List<T> pool;
     private int poolIndex = 0;
     private GameObject tempObject;
 
     private void Awake()
     {
-        if(createPoolOnAwake)
+        if (createPoolOnAwake)
             CreatePool();
     }
 
@@ -38,30 +38,36 @@ public abstract class ObjectPool : MonoBehaviour
 
     public void CreatePool()
     {
-        pool = new List<GameObject>();
-        
+        if (objectToPool.GetComponent<T>() == null)
+        {
+            throw new System.Exception($"{objectToPool.name} does not have a component type of {typeof(T)}");
+        }
+
+        pool = new List<T>();
+
         for (int i = 0; i < poolSize; i++)
         {
             AddNewObjectToPool();
         }
     }
 
-    protected GameObject AddNewObjectToPool()
+    protected T AddNewObjectToPool()
     {
         tempObject = Instantiate(objectToPool, transform);
-        pool.Add(tempObject);
-        AddObjectToDictionaries(tempObject);
+        T component = tempObject.GetComponent<T>();
+        pool.Add(component);
+        AddObjectToDictionary(tempObject);
         tempObject.SetActive(false);
-        return tempObject;
+        return component;
     }
 
-    public GameObject GetPooledObject()
+    public T GetPooledComponent()
     {
         // Check from most likely to least likely to be available. If none of them are available, create a new one.
 
         for (int i = poolIndex; i < poolSize; i++)
         {
-            if (!pool[i].activeInHierarchy)
+            if (!pool[i].gameObject.activeInHierarchy)
             {
                 poolIndex = (poolIndex + 1) % poolSize;
                 return pool[i];
@@ -70,7 +76,7 @@ public abstract class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < poolIndex; i++)
         {
-            if (!pool[i].activeInHierarchy)
+            if (!pool[i].gameObject.activeInHierarchy)
             {
                 poolIndex = (poolIndex + 1) % poolSize;
                 return pool[i];
@@ -82,8 +88,21 @@ public abstract class ObjectPool : MonoBehaviour
         return AddNewObjectToPool();
     }
 
+    public GameObject GetPooledGameObject()
+    {
+        return GetPooledComponent().gameObject;
+    }
+
+    public void SendAllObjectsToPool()
+    {
+        foreach (T component in pool)
+        {
+            component.gameObject.SetActive(false);
+        }
+    }
+
     // only for TargetableAgent objects
-    protected virtual void AddObjectToDictionaries(GameObject _gameObject)
+    protected virtual void AddObjectToDictionary(GameObject gameObject)
     {
 
     }
