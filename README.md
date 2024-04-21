@@ -18,6 +18,6 @@ This is a third-person shooter defense game where players can effortlessly contr
 
 ## How To Play
 
-To test the game, simply play it on the Simulator screen. If you prefer playing on the Game screen, ensure that the screen resolution is set to any portrait resolution other than Free Aspect. Additionally, activate the "Window -> Analysis -> Input Debugger -> Options -> Simulate Touch Input From Mouse or Pen" option. When using the Simulator screen, make sure to disable the "Simulate Touch Input From Mouse or Pen" option, which is turned off by default.
+To test the game, simply play it on the Simulator screen. If you prefer playing on the Game screen, ensure that the screen resolution is set to any portrait resolution other than Free Aspect. Additionally, activate the "Window -> Analysis -> Input Debugger -> Options -> Simulate Touch Input From Mouse or Pen" option. When using the simulator screen, be sure to disable the "Simulate Touch Input from Mouse or Pen" option, which is disabled by default.
 
 Note: This project contains paid 3D assets. Before the project was made public, paid 3D assets were replaced with free assets. The project codes were developed by me and remain the same.
